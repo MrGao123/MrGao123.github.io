@@ -1,0 +1,54 @@
+<!-- wylc_main部分：start -->
+<div class="wylc_page" ng-controller="wylcController">
+    <div class="wylc_main">
+        <div class="container">
+            <div class="wylc_main_top">
+                <ul class="clearfix bd">
+                    <li ng-repeat="wmt in data.wmt" ng-click='actions.tabClass(wmt.liClass)' class='{{wmt.liClass}}' ng-class="{current:data.wmtCurrentClass===wmt.liClass}">
+                        <a ui-sref="{{wmt.href}}">
+                            <h2>{{wmt.tit}}</h2>
+                            <p>{{wmt.content}}</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="wylc_main_middle">
+                <ul>
+                    <li ui-view></li>
+                </ul>
+            </div>
+            <div class="wylc_main_bottom devide_page">
+                <b>共40条</b>
+                8条/页
+                <span class="page_line">|</span>
+                第{{data.thisPage}}/5页
+                <a href="javascript:;" ng-click='actions.tabThisPage("home")' ng-class="{disabled:data.thisPage===1}">
+                    <font title="第一页">首页</font>
+                </a>
+                <a href="javascript:;" ng-click='actions.tabThisPage("prev")' ng-class="{disabled:data.thisPage===1}">
+                    <font title="上一页">上一页</font>
+                </a>
+                <a href="javascript:;" ng-click='actions.tabThisPage(1)' ng-class="{this_page:data.thisPage===1}">1</a>
+                <a href="javascript:;" ng-click='actions.tabThisPage(2)' ng-class="{this_page:data.thisPage===2}">2</a>
+                <a href="javascript:;" ng-click='actions.tabThisPage(3)' ng-class="{this_page:data.thisPage===3}">3</a>
+                <a href="javascript:;" ng-click='actions.tabThisPage(4)' ng-class="{this_page:data.thisPage===4}">4</a>
+                <a href="javascript:;" ng-click='actions.tabThisPage(5)' ng-class="{this_page:data.thisPage===5}">5</a>
+                <a href="javascript:;" ng-click='actions.tabThisPage("next")' ng-class="{disabled:data.thisPage===5}">
+                    <font title="下一页">下一页</font>
+                </a>
+                <a href="javascript:;" ng-click='actions.tabThisPage("end")' ng-class="{disabled:data.thisPage==='5'}">
+                    <font title="最后一页">尾页</font>
+                </a>
+                <span class="page_go">
+                    转到
+                    <input type="text" id="page_text" size="4" />
+                    页
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>    
+    
+</script>
+<!-- wylc_main部分：end -->

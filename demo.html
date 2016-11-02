@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+var yxs=1;
+$('#jiantou').click(function(){
+    if(yxs==1){
+        $('#jiantou b').css('border-left','5px solid transparent').css('border-right','5px solid transparent').css('border-top','5px solid #000000');
+        yxs=0;
+        $('#appear li').show();
+    }
+    if(yxs==0){
+        $('#jiantou b').css('border-left','5px solid #000000').css('border-bottom','5px solid transparent').css('border-top','5px solid transparent');
+        yxs=1;
+        $('#appear li').hide();
+    }
+});
+    <script>
+        /*var str = "2014-11-11 12:00:00";
+        console.log(str.getYear());
+        var str2 = str.toDate("yyyy-MM-dd hh:mm:ss").toString("yyyy-MM-dd:ss");
+        console.log(str.toDate("yyyy-MM-dd hh:mm:ss").getYear() == 2014);   //true
+        console.log(str === str2); //输出true
+*/
+        var date = new Date();
+        // console.log(date);
+        console.log(date.toString("yyyy-MM-dd:ss"));
+        String.prototype.toDate = function (formate) {
+
+        }
+    </script>
+</body>
+</html>
+
